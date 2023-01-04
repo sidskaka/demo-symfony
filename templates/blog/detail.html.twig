@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+{% block body %}
+   <h1>{{ blog.titre }}</h1>
+   <section class="container">
+      <div class="row">
+            <div>
+               <article class="col-md-6">
+                  <figure class="col-lg-12">
+                     <img src="{{ blog.image }}" alt=""/>
+                  </figure>
+                  <div class="article-intro col-lg-12">
+                     <p>{{ blog.contenu }}</p>
+                  </div>
+               </article>
+            </div>
+      </div>
+   </section>
+   <span>{{ blog.comments | length }} commentaires</span>
+   <section class="container">
+      {% for comment in blog.comments | reverse %}
+         test {{loop.index}}
+         <div class="row">
+            <strong>{{ comment.proprietaire.utilisateur }}</strong>
+            <small>écrit le : {{ comment.dateCreation | date('d-m-Y') }} à {{ comment.dateCreation | date('H:m') }}</small>
+            <br />
+            <p>{{ comment.contenu }}</p>
+         </div>
+      {% endfor %}
+   </section>
+   <section>
+      <h3>Veuillez laisser un commentaire</h3>
+      {{ form_start(formComment) }}
+      {{ form_row(formComment.contenu, {'attr': {'placeholder': 'commentaire ...'}}) }}
+      <button class="btn btn-lg btn-primary">Valider le commentaire</button>
+      {{ form_end(formComment) }}
+   </section>
+{% endblock %}

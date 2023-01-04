@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block body %}
+   <h3>Veuillez-vous connecter</h3>
+   <form>
+      <div class="form-group">
+         <label for="exampleInputEmail1">Addresse email</label>
+         <input type="email" class="form-control" name="_username" value="{{ last_username }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="votre email ..." required>
+      </div>
+      <br />
+      <div class="form-group">
+         <label for="exampleInputPassword1">Mot de passe</label>
+         <input type="password" class="form-control" name="_password" id="exampleInputPassword1" placeholder="votre mot de passe ..." required>
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Se connecter</button>
+   </form>
+   <br/>
+   <a href="{{ path('app_inscription') }}">Première connexion</a>
+{% endblock %}

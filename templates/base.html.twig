@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Welcome to Symfony!</title>
+   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+   <link rel="stylesheet" href="{{ asset('assets/css/styles-additionnels.css') }}" />
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="{{ path('app_home') }}">Accueil</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ path('app_blog') }}">Blogs</a>
+               </li>
+            </ul>
+            <section class="container">
+               {# <button class="btn btn-primary button-loglogout">
+                  Connexion
+               </button> #}
+               <ul class="navbar-nav me-auto button-loglogout">
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{ path('app_connexion') }}">Connexion</a>
+                  </li>
+               </ul>
+            </section>
+         </div>
+      </div>
+   </nav>
+   <div class="container">
+      {% block body %}{% endblock %}
+   </div>
+</body>
+
+</html>

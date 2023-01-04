@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block body %}
+   <h3>Veuillez-vous inscrire</h3>
+   
+   {{ form_start(form) }}
+   {{ form_row(form.username, {'attr': {'placeholder': "pseudo ..."}}) }}
+   {{ form_row(form.email, {'attr': {'placeholder': "email ..."}}) }}
+   {{ form_row(form.password, {'attr': {'placeholder': "password ..."}}) }}
+   {{ form_row(form.passwordConf, {'attr': {'placeholder': "confirmer le mot de passe ..."}}) }}
+
+   <button class="btn btn-primary">Enregistrer</button>
+
+   {{ form_end(form) }}
+{% endblock %}
